@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('state_id')->constrained('states')->nullOnDelete();
+            $table->foreignId('state_id')->nullable()->constrained('states')->nullOnDelete();
             $table->string('name', 255);
             $table->string('short_code', 16)->nullable();
             $table->timestamps();
